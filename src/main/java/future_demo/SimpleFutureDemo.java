@@ -1,7 +1,6 @@
 package future_demo;
 
 import java.util.concurrent.*;
-import java.util.stream.Stream;
 
 public class SimpleFutureDemo {
 
@@ -13,6 +12,7 @@ public class SimpleFutureDemo {
         FutureTask<Integer> future = new FutureTask<>(() -> {
             System.out.println("will sleep 2.5 sec");
            Thread.sleep(2500);
+//           throw new RuntimeException("Synthetic exception");
            return 123;
        });
         future.run();

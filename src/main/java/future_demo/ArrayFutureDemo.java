@@ -4,6 +4,7 @@ import jdk.nashorn.internal.codegen.CompilerConstants;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.concurrent.*;
 
 public class ArrayFutureDemo {
@@ -17,7 +18,7 @@ public class ArrayFutureDemo {
         }
 
         for (Future<String> f : list) {
-            System.out.println(LocalDateTime.now() + " : " +f.get());
+            System.out.println(LocalDateTime.now() + " : " + f.get());
         }
         service.shutdown();
     }
@@ -26,7 +27,7 @@ public class ArrayFutureDemo {
 
         @Override
         public String call() throws Exception {
-            Thread.sleep(1500);
+            Thread.sleep(new Random().nextInt(25500));
             return Thread.currentThread().getName();
         }
     }

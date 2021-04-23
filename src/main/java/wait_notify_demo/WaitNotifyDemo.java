@@ -48,7 +48,7 @@ public class WaitNotifyDemo {
             synchronized (lock) {
                 while (counter <= 10) {
                     try {
-                        Thread.sleep(300);
+//                        Thread.sleep(300);
                         System.out.println("Counter was increased: " + counter);
                         lock.notifyAll();
                         lock.wait();
